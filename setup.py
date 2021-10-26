@@ -11,7 +11,7 @@ if __name__ == "__main__":
     setup(
         name="github_actions_test",
         scripts=scripts,
-        version="v0.0.1",
+        version="v0.0.2",
         description="test",
         long_description=long_description,
         long_description_content_type="text/markdown",
