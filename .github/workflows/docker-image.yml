@@ -11,4 +11,4 @@ jobs:
       - name: downcase REPO
         run: echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag ${{ ${REPO} }}:latest
+        run: docker build . --file Dockerfile --tag ${REPO}:latest
