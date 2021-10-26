@@ -16,7 +16,7 @@ if __name__ == "__main__":
         long_description=long_description,
         long_description_content_type="text/markdown",
         author="xxxx",
-        author_email="xxxx.co.jp",
+        author_email="xxxx@yahoo.co.jp",
         url="https://github.com/PINTO0309/github_actions_test",
         license="MIT License",
         packages=find_packages(),
