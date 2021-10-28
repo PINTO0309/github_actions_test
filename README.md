@@ -8,7 +8,7 @@ $ gh release create ${APPVER} \
 --target gcp_test \
 --title "github_actions_test ${APPVER}" \
 --notes \
-'- release test 2' \
+'- release test 3' \
 ${PACK}/flatc.tar.gz
 ```
 
