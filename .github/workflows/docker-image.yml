@@ -16,6 +16,13 @@ jobs:
       - name: Get Tag
         run: echo "TAG=${GITHUB_REF##*/}" >> $GITHUB_ENV
 
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@master
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          export_default_credentials: true
+
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
