@@ -1,14 +1,14 @@
 # Release Test
 
 ```bash
-$ APPVER=v0.0.3
+$ APPVER=v0.0.4
 $ PACK=${PWD}/packages
 
 $ gh release create ${APPVER} \
 --target gcp_test \
 --title "github_actions_test ${APPVER}" \
 --notes \
-'- release test 3' \
+'- release test 4' \
 ${PACK}/flatc.tar.gz
 ```
 
