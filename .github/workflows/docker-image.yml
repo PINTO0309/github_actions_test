@@ -3,6 +3,8 @@ on:
   release:
     types:
       - published
+env:
+  GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
 jobs:
   build:
     runs-on: ubuntu-latest
