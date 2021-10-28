@@ -46,7 +46,7 @@ jobs:
           docker build \
             --quiet \
             --tag "asia.gcr.io/${{ env.GCP_PROJECT_ID }}/${{ env.REPO }}:${{ env.TAG }}" \
-            --build-args APPVER="${{ env.TAG }}"
+            --build-arg APPVER="${{ env.TAG }}"
       - name: docker push
         run: |
           docker push \
