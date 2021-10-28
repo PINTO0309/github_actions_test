@@ -45,4 +45,5 @@ jobs:
         run: |-
           gcloud builds submit \
             --quiet \
-            --tag "asia.gcr.io/${{ env.GCP_PROJECT_ID }}/${{ env.REPO }}:${{ env.TAG }}"
+            --tag "asia.gcr.io/${{ env.GCP_PROJECT_ID }}/${{ env.REPO }}:${{ env.TAG }}" \
+            --substitutions=_APPVER="${{ env.TAG }}"
