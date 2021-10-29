@@ -3,9 +3,12 @@ steps:
     args: [
       'build',
       '--build-arg', 'APPVER=$TAG_NAME',
-      '--tag', 'asia.gcr.io/$PROJECT_ID/$REPO_NAME:$TAG_NAME',
+      '--tag', 'asia.gcr.io/$PROJECT_ID/${_REPO}:${_TAG}',
       '.'
     ]
+substitutions:
+    _REPO: github_actions_test # default value
+    _TAG: v0.0.1 # default value
 images: [
-    'asia.gcr.io/$PROJECT_ID/$REPO_NAME:$TAG_NAME'
+    'asia.gcr.io/$PROJECT_ID/${_REPO}:${_TAG}'
 ]
