@@ -1,0 +1,11 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '--build-arg', 'APPVER=$TAG_NAME',
+      '--tag', 'asia.gcr.io/$PROJECT_ID/$REPO_NAME:$TAG_NAME',
+      '.'
+    ]
+images: [
+    'asia.gcr.io/$PROJECT_ID/$REPO_NAME:$TAG_NAME'
+]
