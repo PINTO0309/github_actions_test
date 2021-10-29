@@ -1,7 +1,7 @@
 # Release Test
 
 ```bash
-$ APPVER=v0.0.11
+$ APPVER=v0.0.14
 $ PACK=${PWD}/packages
 
 $ gh release create ${APPVER} \
