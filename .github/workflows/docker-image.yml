@@ -45,5 +45,6 @@ jobs:
       - name: Build a docker image and submit it to GCR
         run: |
           gcloud builds submit \
+            --project ${{ env.GCP_PROJECT_ID }} \
             --config cloudbuild.yml \
-            --project ${{ env.GCP_PROJECT_ID }}
+            --substitutions=_REPO=${{ env.REPO }},_TAG=${{ env.TAG }}
