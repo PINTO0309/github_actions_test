@@ -41,18 +41,8 @@ jobs:
           project_id: ${{ env.GCP_PROJECT_ID }}
           service_account_key: ${{ env.GCP_SA_KEY }}
           export_default_credentials: true
-      - name: gcloud auth
-        run: |
-          gcloud auth activate-service-account ${{ env.GCP_SA_NAME }} --key-file=${{ env.GCP_SA_KEY }}
-          gcloud auth configure-docker
 
-      - name: docker build
-        run: |
-          docker build \
-            --quiet \
-            --tag "asia.gcr.io/${{ env.GCP_PROJECT_ID }}/${{ env.REPO }}:${{ env.TAG }}" \
-            --build-arg APPVER="${{ env.TAG }}" .
-      - name: docker push
-        run: |
-          docker push \
-            "asia.gcr.io/${{ env.GCP_PROJECT_ID }}/${{ env.REPO }}:${{ env.TAG }}"
+      - name: Build a docker image and submit it to GCR
+        run: gcloud builds submit \
+              --substitutions=_APPVER=${{ env.TAG }} \
+              --project ${{ env.GCP_PROJECT_ID }}
