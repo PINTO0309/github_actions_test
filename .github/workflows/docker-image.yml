@@ -43,6 +43,4 @@ jobs:
           export_default_credentials: true
 
       - name: Build a docker image and submit it to GCR
-        run: gcloud builds submit \
-              --substitutions=_APPVER=${{ env.TAG }} \
-              --project ${{ env.GCP_PROJECT_ID }}
+        run: gcloud builds submit --project ${{ env.GCP_PROJECT_ID }}
