@@ -2,13 +2,13 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: [
       'build',
-      '--build-arg', 'APPVER=$TAG_NAME',
+      '--build-arg', 'APPVER=${_TAG}',
       '--tag', 'asia.gcr.io/$PROJECT_ID/${_REPO}:${_TAG}',
       '.'
     ]
 substitutions:
-    _REPO: github_actions_test # default value
-    _TAG: v0.0.1 # default value
+    _REPO: 'github_actions_test' # default value
+    _TAG: 'v0.0.1' # default value
 images: [
     'asia.gcr.io/$PROJECT_ID/${_REPO}:${_TAG}'
 ]
